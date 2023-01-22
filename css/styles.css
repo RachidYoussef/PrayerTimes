@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --num: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', 'sans-serif';
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+  background-image: url('../images/cool-background.jpg');
+  color: #fff;
+}
+
+.container {
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-info {
+  width: 400px;
+}
+
+.date-container {
+  font-weight: 100;
+}
+
+.current-time {
+  font-size: 90px;
+  margin-left: -5px;
+}
+
+.current-date {
+  font-size: 35px;
+}
+
+.location {
+  text-align: end;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+.next-prayer {
+  display: flex;
+  justify-content: space-between;
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/prayer-info-bg.jpg');
+  background-size: cover;
+  box-shadow: 6px 6px 20px -1px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin: 18px 0;
+  padding: 10px 12px 0;
+}
+
+.prayer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.prayer-info p {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.prayer-name {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.prayer-time {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.time-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+}
+
+.time-left .card {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.time-left .card .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.time-left .card .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.time-left .card .percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 2;
+  stroke:  rgba(0, 0, 0, 0.2);
+  transform: translate(5px, 5px);
+}
+
+.time-left .card .percent svg circle:nth-child(2) {
+  stroke: white;
+  stroke-dasharray: 440;
+  stroke-dashoffset:  calc(440 - (440 * var(--num)) / 100);
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2s;
+}  
+
+@keyframes fadeIn 
+{
+  0%
+  {
+    opacity: 0;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+.dot {
+  position: absolute;
+  inset: 6px;
+  z-index: 10;
+  transform: rotate(calc(3.6deg * var(--num)));
+  animation: animateDot 1.5s linear forwards;
+}
+
+@keyframes animateDot {
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 10px white,
+  0 0 30px white;
+}
+
+.live-time {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+  z-index: 10;
+}
+
+.live-time button {
+  border: none;
+  background-color: transparent;
+}
+
+.live-time #sound-icon {
+  max-width: 30px;
+  max-height: 30px;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.live-time #sound-icon:hover {
+  cursor: pointer;
+}
+
+
+.live-time p {
+  font-size: 1.25em;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.future-prayer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(24, 24, 27, 0.8);
+  padding: 0 15px;
+}
+
+.future-prayer .today {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future-prayer .other-days {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.future-prayer .other-days .future-prayer-item {
+  margin: 10px;
+  justify-content: center;
+  font-size: 16px;
+  gap: 2px;
+}
+
+.future-prayer .today .future-prayer-item {
+  width: 260px;
+  height: 220px;
+  margin: 10px;
+  font-size: 16px;
+  gap: 7.5px;
+  background-image: url('../images/prayer-time-bg.jpg');
+  background-size: cover;
+  background-position: 50% 0%;
+}
+
+.future-prayer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 145px;
+}
+
+
+
+.future-prayer-item .day {
+  background-color: rgba(127,127,127, 0.5);
+  border-radius: 50px;
+  text-align: center;
+  
+}
+
+.today .future-prayer-item .day {
+  background-color: rgba(86, 86, 86, 0.8);
+  padding: 5px 10px;
+  font-size: 18px;
+  box-shadow:  0 0 10px rgba(86, 86, 86, 1),
+  0 0 30px rgba(86, 86, 86, 1);
+}
+
+.other-days .future-prayer-item .day {
+  padding: 2px 5px;
+}
+
+.fajr, .sunrise, .dhuhr, .asr, .maghrib, .isha {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  
+}
+

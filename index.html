@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/title-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Prayer times</title>
+    <script defer src="javascript/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="current-info">
+        <div class="date-container">
+          <div class="current-time">
+            
+          </div>
+          <div class="current-date">
+            <span id="current-day"></span>, 
+            <span id="current-number-of-day"></span> 
+            <span id="current-month"></span>
+          </div>
+        </div>
+        <div class="next-prayer">
+          <div class="prayer-info">
+            <p>Next Prayer</p>
+            <div class="prayer-name"></div>
+            <div class="prayer-time"><span id="am-pm"></span>
+            </div>
+          </div>
+          <div class="time-left">
+            <div class="card">
+              <div class="percent">
+                <div class="dot"></div>
+                <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="live-time">
+                  <button id="button-sound" onclick="muteAdhan()">
+                    <audio id="adhan" src="audio/adhan-call-to-prayer.flac" ></audio>
+                    <img id="sound-icon" src="images/active-sound-icon.png">
+                  </button>
+                  <p id="cout-down"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="location">
+        <span class="country"></span>/<span class="city"></span>
+      </div>
+    </div>
+    <div class="future-prayer">
+      <div class="today">
+        <div class="future-prayer-item" id="current-temp"></div>
+      </div>
+      <div class="other-days" id="other-days"></div> 
+    </div>
+  </body>
+</html>
