@@ -172,7 +172,7 @@ function countDown(prayerTimes, day, month, year) {
 
     document.querySelector('.prayer-name').innerHTML = nextPrayer;
 
-    document.querySelector('.prayer-time').innerHTML = `${prayerTimes[nextPrayer].slice(0, 5)} <span id="am-pm">AM</span>`;
+    document.querySelector('.prayer-time').innerHTML = `${prayerTimes[nextPrayer].slice(0, 5)}`;
     
     if (timeRemaining <= 0) {
       playAdhan();
