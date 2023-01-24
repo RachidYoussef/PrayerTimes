@@ -1,6 +1,6 @@
 # CS50 Final Project-Prayer Times website
 
-It was created with  HTML, CSS, Javascript, Prayer Times website was created as a final project to fulfill the requirements of Harvard's CS50 (Intro to Computer Science) course - Responsive.
+It was created with  HTML, CSS, Javascript, Prayer Times website was created as a final project to fulfill the requirements of Harvard's CS50 (Intro to Computer Science) course.
 I wanted to make a project like this to expand my knowledge of HTML, CSS & JAVASCRIPT and how to use API etc.
 
 ## Languages used
@@ -17,7 +17,10 @@ All of this is linked and managed with a javascript file.
 ## How to launch?
 
 You can launch the website with this link: https://rachidyoussef.github.io/PrayerTimes/
+
 Just don't forget to allow it to get you location :)
+
+Also this the link to my video presentation of the project: https://youtu.be/W9p7s6ZjUgA
 
 
 
