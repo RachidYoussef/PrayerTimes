@@ -19,3 +19,6 @@ All of this is linked and managed with a javascript file.
 You can launch the website with this link: https://rachidyoussef.github.io/PrayerTimes/
 Just don't forget to allow it to get you location :)
 
+
+
+![Prayer times - Google Chrome 1_24_2023 4_17_24 PM](https://user-images.githubusercontent.com/80955622/214334750-061f517d-dc6c-4b10-9720-672fc394ad8e.png)
